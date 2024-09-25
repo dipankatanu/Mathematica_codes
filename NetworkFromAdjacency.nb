@@ -1,0 +1,99 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2907,         89]
+NotebookOptionsPosition[      2549,         75]
+NotebookOutlinePosition[      2950,         91]
+CellTagsIndexPosition[      2907,         88]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Define", " ", "the", " ", "adjacency", " ", "matrix"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"adjacencyMatrix", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1", ",", "1", ",", "0", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0", ",", "1", ",", "0"}], "}"}]}], 
+      "}"}]}], ";"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"networkGraph", "=", 
+     RowBox[{"AdjacencyGraph", "[", 
+      RowBox[{"adjacencyMatrix", ",", 
+       RowBox[{"VertexLabels", "->", "\"\<Name\>\""}], ",", 
+       RowBox[{"EdgeStyle", "->", "Thick"}], ",", 
+       RowBox[{"GraphStyle", "->", "\"\<Basic\>\""}]}], "]"}]}], ";"}], "\n", 
+   "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Display", " ", "the", " ", "graph"}], "*)"}], "\n", 
+   "networkGraph", "\n", "\n", 
+   RowBox[{
+    RowBox[{"degrees", "=", 
+     RowBox[{"VertexDegree", "[", "networkGraph", "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"maxDegree", "=", 
+     RowBox[{"Max", "[", "degrees", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"hubs", "=", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"VertexList", "[", "networkGraph", "]"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"VertexDegree", "[", 
+          RowBox[{"networkGraph", ",", "#"}], "]"}], "==", "maxDegree"}], 
+        "&"}]}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Display", " ", "hubs", " ", "and", " ", "their", " ", "degrees"}], 
+    "*)"}], "\n", 
+   RowBox[{"{", 
+    RowBox[{"hubs", ",", "maxDegree"}], "}"}], "\n"}]}]], "Input",ExpressionUU\
+ID->"926226b9-9ecd-6442-9490-8c74edf81547"]
+},
+WindowSize->{960, 532},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Script.nb",
+ExpressionUUID->"052f9560-8ec2-1d42-8504-3ce8103ccb0a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 1991, 53, 308, "Input",ExpressionUUID->"926226b9-9ecd-6442-9490-8c74edf81547"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
